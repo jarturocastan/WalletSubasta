@@ -2,11 +2,11 @@ const Web3 = require('web3')
 var Tx = require('ethereumjs-tx')
 const web3 = new Web3('https://ropsten.infura.io/v3/fa3532e0ec244f1d961e4d20aa6afcd5')
 
-const account1 = '0x72ede1c4ed31148f7a361a4729b2d0202951ec5d' // Your account address 1
-const account2 = '0x6d0fe904e4c87140ac452694835e4eddae3ec8a5' // Your account address 2
+const account1 = '' 
+const account2 = '' 
 
-const privateKey1 = Buffer.from('bad2869923c052067a6f7acbeceec877b5ac6ac7439311447c5fda575a88961d', 'hex')
-const privateKey2 = Buffer.from('657f5121605099aff278fd5e93b14a00f0705bba6c446dcc0fdb549d2872326c', 'hex')
+const privateKey1 = Buffer.from('', 'hex')
+const privateKey2 = Buffer.from('', 'hex')
 
 // Read the deployed contract - get the addresss from Etherscan
 const contractAddress = '0x450f8F58E874341e6ea33308289AF63A3fd03663'
