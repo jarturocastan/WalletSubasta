@@ -1,5 +1,6 @@
 const Web3 = require('web3')
 var Tx = require('ethereumjs-tx')
+var $ = require('jquery')
 const web3 = new Web3('https://ropsten.infura.io/v3/fa3532e0ec244f1d961e4d20aa6afcd5')
 
 const account1 = '0x72ede1c4ed31148f7a361a4729b2d0202951ec5d' // Your account address 1
@@ -14,7 +15,7 @@ const contractABI = [ { "constant": true, "inputs": [], "name": "name", "outputs
 
 const contract = new web3.eth.Contract(contractABI, contractAddress)
 
-// Transfer some tokens
+/*// Transfer some tokens
 web3.eth.getTransactionCount(account1, (err, txCount) => {
 
   const txObject = {
@@ -35,16 +36,38 @@ web3.eth.getTransactionCount(account1, (err, txCount) => {
     console.log('err:', err, 'txHash:', txHash)
     // Use this txHash to find the contract on Etherscan!
   })
+})*/
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function getBalance(account) {
+  let _balance;
+  contract.methods.balanceOf(account2).call((err, balance) => {}).then(function(result){
+    determinateViewByBalance(result);
+  })
+  return _balance;
+}
+
+
+$('#button-login').click(function(){
+  let credentials = {
+    account : $('#account').val(),
+    key : $('#account').val()
+  };
+  localStorage.setItem('creadentials',JSON.stringify(credentials));
+  getBalance(credentials.account);
 })
 
-// Check Token balance for account1
-contract.methods.balanceOf(account1).call((err, balance) => {
-  console.log(account1);
-  console.log({ err, balance })
-})
-
-// Check Token balance for account2
-contract.methods.balanceOf(account2).call((err, balance) => {
-  console.log(account2);  
-  console.log({ err, balance })
-})
+function determinateViewByBalance(result) {
+  if(result > 0) {
+    console.log('balances es mayor');
+  } else {
+    window.location.href = 'buy-coins.html'
+  }
+}
