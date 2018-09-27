@@ -8,23 +8,40 @@
     <title>Wallet</title>
 </head>
 <body>
-    <h1 class="text-center" style="margin-top:5%">Coins market</h1>
+    <h1 class="text-center" style="margin-top:5%">Token market</h1>
     <div>
-        <h4 class="text-center">My account</h4>
-        <h5 class="text-center">EMKT:</h5>
-        <h5 class="text-center">ETH:</h5>
-    </div>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm">
-                <form>
-                    <div class="form-group">
-                      <label>Account</label>
-                      <input type="text" class="form-control" id="account">
-                    </div>
-                </form>
-          </div>
+            <h4 class="text-center" id="account"></h4>
+            <h5 class="text-center" id="tokens">EMKT:</h5>
+            <h5 class="text-center" id="eth">ETH:</h5>
+            <h5 class="text-cener">
+                <a href=""></a>
+            </h3>
         </div>
+    <div class="container">
+            <table>
+                    <thead>
+                        <tr>
+                            <th>Token symbol</th>
+                            <th>Cantidad disponible</th>
+                            <th>Cantidad</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                   <tbody>
+                       <td style="width:25%;">
+                        EMKT
+                       </td>
+                       <td style="width:25%;">
+                            <a id="current_tokens"></a>
+                        </td>
+                        <td style="width:25%;">
+                            <input type="number" id="buy-amount">
+                        </td>
+                        <td style="width:25%;">
+                            <button class="btn btn-primary" id="buy-tokens">Comprar</button>
+                        </td>
+                   </tbody>
+               </table>
     </div>
     <script src="./dist/main.js"></script>
 </body>

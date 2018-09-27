@@ -8,24 +8,32 @@
     <title>Wallet</title>
 </head>
 <body>
-    <h1 class="text-center" style="margin-top:5%">Coins market</h1>
+    <h1 class="text-center" style="margin-top:5%">Subastas</h1>
+    <h5 class="text-center">
+        <a href="buy-coins.html">Buy tokens</a> <a href="">Add Subasta</a>
+    </h5>
     <div>
-        <h4 class="text-center">My account</h4>
-        <h5 class="text-center">EMKT:</h5>
-        <h5 class="text-center">ETH:</h5>
+        <h4 class="text-center" id="account"></h4>
+        <h5 class="text-center" id="tokens">EMKT:</h5>
+        <h5 class="text-center" id="eth">ETH:</h5>
+        <h5 class="text-cener">
+            <a href=""></a>
+        </h3>
     </div>
-    <div class="container">
-        <div class="row">
-          <div class="col-sm">
-                <form>
-                    <div class="form-group">
-                      <label>Account</label>
-                      <input type="text" class="form-control" id="account">
-                    </div>
-                </form>
-          </div>
-        </div>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Object</th>
+                <th>Status</th>
+                <th>Owner</th>
+                <th>Temporal owner</th>
+                <th>Last amount</th>
+            </tr>
+        </thead>
+       <tbody id="table-body">
+       </tbody>
+   </table>
+
     <script src="./dist/main.js"></script>
 </body>
 </html>
